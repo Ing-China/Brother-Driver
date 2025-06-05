@@ -82,7 +82,7 @@ const Home = () => {
       tagColors: ["bg-blue-100 text-blue-700", "bg-blue-100 text-blue-700"],
     },
   ];
-  const handlePageChange = (page) => {
+  const handlePageChange = (page: React.SetStateAction<number>) => {
     setCurrentPage(page);
   };
 
