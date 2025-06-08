@@ -1,18 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { AudioWaveform, Command, GalleryVerticalEnd } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
 import { NavUser } from "@/components/nav-user";
@@ -24,7 +13,6 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { NavSecondary } from "./nav-secondary";
 
 const data = {
   user: {
@@ -49,39 +37,16 @@ const data = {
       plan: "Free",
     },
   ],
-  collapsibleNav: [
-    {
-      title: "Playground",
-      url: "#",
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-          icon: SquareTerminal,
-        },
-        {
-          title: "Starred",
-          url: "#",
-          icon: SquareTerminal,
-        },
-        {
-          title: "Settings",
-          url: "#",
-          icon: SquareTerminal,
-        },
-      ],
-    },
-  ],
+
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/system",
       icon: AudioWaveform,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "Settings",
+      url: "/system/setting",
       icon: AudioWaveform,
     },
     {
@@ -110,7 +75,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavSecondary items={data.collapsibleNav} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
